@@ -5,11 +5,12 @@ const requests = axios.create({
 	baseURL: '/api',
 	timeout: 5000,
 });
-
 /**
- * 请求拦截器 token,参数加密.....
+ *  拦截器
  * @see https://www.axios-http.cn/docs/interceptors
  * */
+
+/** 请求拦截器 */
 requests.interceptors.request.use(
 	function (config) {
 		console.log(config);
@@ -21,7 +22,7 @@ requests.interceptors.request.use(
 	}
 );
 
-/**响应拦截器 */
+/** 响应拦截器 */
 requests.interceptors.response.use(
 	function (response) {
 		if (response.data.code == 200) {
