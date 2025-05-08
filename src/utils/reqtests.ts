@@ -5,10 +5,6 @@ const requests = axios.create({
 	baseURL: '/api',
 	timeout: 5000,
 });
-/**
- *  拦截器
- * @see https://www.axios-http.cn/docs/interceptors
- * */
 
 /** 请求拦截器 */
 requests.interceptors.request.use(
