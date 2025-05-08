@@ -26,9 +26,7 @@ requests.interceptors.response.use(
 		}
 	},
 	function (error) {
-		if (error.response.data.code == 400) {
-			ElMessage.error(error.response.data.msg);
-		} else if (error.response.data.code == 500) {
+		if (error.response.data.code == 400 ||error.response.data.code == 500) {
 			ElMessage.error(error.response.data.msg);
 		}
 		return Promise.reject(error);
